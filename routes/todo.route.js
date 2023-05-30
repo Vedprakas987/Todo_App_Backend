@@ -39,7 +39,7 @@ todoRouter.patch("/:id",async(req,res)=>{
     const {id} = req.params
     const payload= req.body
     try{
-        await visual_model.findByIdAndUpdate({_id:id},payload)
+        await todoModel.findByIdAndUpdate({_id:id},payload)
         res.send({"msg":"Todo is Updated"})
     }catch(err){
         res.send({"msg":err.message})
